@@ -1,7 +1,7 @@
 #! /bin/bash
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin:~/.nvm/versions/node/v8.9.4/bin;
 export PATH
-
+cd /home/tmp
 clear
 VER=1.2.0
 strongswan_version='strongswan-5.6.0'
