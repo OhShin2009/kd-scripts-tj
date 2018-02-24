@@ -397,11 +397,12 @@ EOF
 
 # configure the ipsec.secrets
 function configure_secrets(){
-    cat > /usr/local/etc/ipsec.secrets<<-EOF
+    cat > /usr/local/etc/ipsec.secrets.empty<<-EOF
 : RSA server.pem
 : PSK "1q2w3e4r"
 : XAUTH "1q2w3e4r"
 xingtao %any : EAP "123456"
+cp /usr/local/etc/ipsec.secrets.empty /usr/local/etc/ipsec.secrets
 EOF
 }
 
