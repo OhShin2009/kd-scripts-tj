@@ -402,8 +402,8 @@ function configure_secrets(){
 : PSK "1q2w3e4r"
 : XAUTH "1q2w3e4r"
 xingtao %any : EAP "123456"
-cp /usr/local/etc/ipsec.secrets.default /usr/local/etc/ipsec.secrets
 EOF
+cp /usr/local/etc/ipsec.secrets.default /usr/local/etc/ipsec.secrets
 }
 
 function SNAT_set(){
