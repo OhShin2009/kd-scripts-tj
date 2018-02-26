@@ -3,6 +3,7 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin:~/.nvm/v
 export PATH
 
 function init(){
+
   if ! [ -x "$(command -v git)" ]; then
     apt update
     apt install git -y
@@ -15,6 +16,7 @@ function init(){
 }
 
 function deploy_vpn(){
+
   if ! [ -x "$(command -v ipsec)" ]; then
     cd /home/kd-scripts
     git pull
@@ -24,9 +26,10 @@ function deploy_vpn(){
     if [ $? -ne 0 ] ; then
       ipsec start
     else
-      echo "ok"
+      echo "ipsec is running"
     fi
   fi
+
 }
 
 function deploy_proxy(){
