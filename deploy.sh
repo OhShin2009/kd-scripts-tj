@@ -10,7 +10,9 @@ function deploy_vpn(){
     if [ $? -ne 0 ] ; then
       ipsec start
     else
-    echo "ok"
+      echo "ok"
+    fi
+  fi
 }
 
 function deploy_proxy(){
