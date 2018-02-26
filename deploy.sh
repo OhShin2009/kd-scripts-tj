@@ -23,7 +23,7 @@ function deploy_proxy(){
   npm install
   ps -fe | grep kd-proxy | grep -v grep
   if [ $? -ne 0 ] ; then
-    pm2 start /home/proxy.json
+    pm2 start /home/kd-proxy/bootstrap.json
   else
     pm2 restart all
   fi
