@@ -64,7 +64,6 @@ function install_ikev2(){
     SNAT_set
     iptables_check
     ipsec restart
-    pm2 start /home/proxy.json
     success_info
 }
 
