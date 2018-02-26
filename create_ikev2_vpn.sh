@@ -1,7 +1,10 @@
 #! /bin/bash
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin:~/.nvm/versions/node/v8.9.4/bin;
 export PATH
-cd /home/tmp
+if [ ! -d "/home/vpn" ]; then
+  mkdir /home/vpn
+fi
+cd /home/vpn
 clear
 VER=1.2.0
 strongswan_version='strongswan-5.6.2'
