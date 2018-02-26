@@ -27,5 +27,5 @@ function deploy_proxy(){
   fi
 }
 
-deploy_vpn()
-deploy_proxy()
+deploy_vpn
+deploy_proxy
