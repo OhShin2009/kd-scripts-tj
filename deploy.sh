@@ -23,7 +23,7 @@ function deploy_proxy(){
   if [ $? -ne 0 ] ; then
     pm2 start /home/proxy.json
   else
-    pm2 restart
+    pm2 restart all
   fi
 }
 
