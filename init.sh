@@ -22,4 +22,4 @@ if [ ! -d "/home/kd-scripts" ]; then
   chmod +x /home/kd-scripts/*
 fi
 
-sh /home/kd-scripts/deploy.sh
+/home/kd-scripts/deploy.sh
