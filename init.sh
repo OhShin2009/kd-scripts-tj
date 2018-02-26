@@ -15,11 +15,11 @@ if ! [ -x "$(command -v redis-server)" ]; then
   apt install redis-server -y
 fi
 
-if [ ! -d PROXY_FOLDER ]; then
+if [ ! -d $PROXY_FOLDER ]; then
   git clone https://github.com/Mooc1988/kd-proxy.git
 fi
 
-if [ ! -d SCRIPTS_FOLDER ]; then
+if [ ! -d $SCRIPTS_FOLDER ]; then
   git clone https://github.com/Mooc1988/kd-scripts.git
   chmod +x /home/kd-scripts/*
 fi
