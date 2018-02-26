@@ -4,7 +4,7 @@ export PATH
 cd /home/tmp
 clear
 VER=1.2.0
-strongswan_version='strongswan-5.6.0'
+strongswan_version='strongswan-5.6.2'
 
 echo "#############################################################"
 echo "# Install IKEV2 VPN for CentOS6.x/7 (32bit/64bit) or Ubuntu or Debian7/8.*"
