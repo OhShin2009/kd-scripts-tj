@@ -1,7 +1,6 @@
 #! /bin/bash
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin:~/.nvm/versions/node/v8.9.4/bin;
 export PATH
-cd /home
 
 function deploy_vpn(){
   if ! [ -x "$(command -v ipsec)" ]; then
@@ -16,7 +15,6 @@ function deploy_vpn(){
       echo "ipsec is running"
     fi
   fi
-
 }
 
 function deploy_proxy(){
