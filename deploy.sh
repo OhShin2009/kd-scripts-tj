@@ -6,7 +6,7 @@ function deploy_vpn(){
   if ! [ -x "$(command -v ipsec)" ]; then
     cd /home/kd-scripts
     git pull
-    sh /home/kd-scripts/create_ikev2_vpn.sh
+    bash /home/kd-scripts/create_ikev2_vpn.sh
   else
     ps -fe | grep ipsec | grep -v grep
     if [ $? -ne 0 ] ; then
