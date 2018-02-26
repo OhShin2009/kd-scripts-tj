@@ -2,6 +2,18 @@
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin:~/.nvm/versions/node/v8.9.4/bin;
 export PATH
 
+function init(){
+  if ! [ -x "$(command -v git)" ]; then
+    apt update
+    apt install git -y
+  fi
+
+  if ! [ -x "$(command -v redis-server)" ]; then
+    apt update
+    apt install redis-server -y
+  fi
+}
+
 function deploy_vpn(){
   if ! [ -x "$(command -v ipsec)" ]; then
     cd /home/kd-scripts
@@ -29,5 +41,6 @@ function deploy_proxy(){
   fi
 }
 
+init
 deploy_vpn
 deploy_proxy
