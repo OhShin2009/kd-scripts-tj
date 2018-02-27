@@ -12,7 +12,7 @@ function deploy_vpn(){
     if [ $? -ne 0 ] ; then
       ipsec start
     else
-      echo "ipsec is running"
+      ipsec restart
     fi
   fi
 }
