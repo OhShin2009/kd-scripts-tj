@@ -7,7 +7,7 @@ fi
 cd /home/vpn
 clear
 VER=1.2.0
-strongswan_version='strongswan-5.6.2'
+strongswan_version='strongswan-5.6.1'
 
 echo "#############################################################"
 echo "# Install IKEV2 VPN for CentOS6.x/7 (32bit/64bit) or Ubuntu or Debian7/8.*"
@@ -194,7 +194,6 @@ function download_files(){
         cd $cur_dir/$strongswan_version/
     else
         echo ""
-        echo "Unzip $strongswan_file failed! Please visit https://quericy.me/blog/699 and contact."
         exit 1
     fi
 }
