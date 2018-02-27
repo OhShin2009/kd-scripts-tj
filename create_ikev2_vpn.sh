@@ -126,8 +126,6 @@ function pre_install(){
     echo "# Install IKEV2 VPN for CentOS6.x/7 (32bit/64bit) or Ubuntu or Debian7/8.*"
     echo "# Version:$VER"
     echo "#############################################################"
-    ulimit -Sn 10000
-    echo "set ulimit 10000"
     os_virtual_machine=`virt-what`
     echo "$os_virtual_machine"	
     if [ "$os_virtual_machine" = "xen" -o "$os_virtual_machine" = "kvm" ]; then
