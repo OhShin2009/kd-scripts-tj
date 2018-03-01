@@ -21,4 +21,5 @@ if [ ! -d "/home/kd-scripts" ]; then
   git clone https://github.com/Mooc1988/kd-scripts.git
   chmod +x /home/kd-scripts/*
 fi
+
 bash /home/kd-scripts/deploy.sh
