@@ -23,12 +23,13 @@ function deploy_proxy(){
   npm install
   ps -fe | grep kd-proxy | grep -v grep
   if [ $? -ne 0 ] ; then
-    pm2 start /home/kd-proxy/bootstrap.json
+    cd /home/kd-proxy
+    pm2 start bootstrap
+    echo "start pm2" >> /home/boot.log
   else
     pm2 restart all
   fi
 }
 
 deploy_vpn
-
 deploy_proxy
