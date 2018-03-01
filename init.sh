@@ -15,11 +15,17 @@ fi
 
 if [ ! -d "/home/kd-proxy" ]; then
   git clone https://github.com/Mooc1988/kd-proxy.git
+else
+  cd /home/kd-proxy
+  git pull
 fi
 
 if [ ! -d "/home/kd-scripts" ]; then
   git clone https://github.com/Mooc1988/kd-scripts.git
   chmod +x /home/kd-scripts/*
+else
+  cd /home/kd-scripts
+  git pull
 fi
 
 bash /home/kd-scripts/deploy.sh
