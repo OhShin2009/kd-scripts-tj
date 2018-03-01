@@ -32,4 +32,4 @@ function deploy_proxy(){
 }
 
 deploy_vpn
-#deploy_proxy
+deploy_proxy
