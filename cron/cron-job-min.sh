@@ -2,6 +2,10 @@
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin:~/.nvm/versions/node/v8.9.4/bin;
 export PATH
 
+echo '========================'
+date "+%Y-%m-%d %H:%M:%S"
+echo '========================'
+
 if [ -x "$(command -v git)" ]; then
     cd /home/kd-scripts
     git pull
@@ -16,6 +20,4 @@ if [ -x "$(command -v ipsec)" ]; then
     ipsec restart
   fi
 fi
-echo '============'
-date "+%Y-%m-%d %H:%M:%S"
-echo '============'
+
