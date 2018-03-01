@@ -16,5 +16,6 @@ if [ -x "$(command -v ipsec)" ]; then
     ipsec restart
   fi
 fi
-
+echo '============'
 date "+%Y-%m-%d %H:%M:%S"
+echo '============'
