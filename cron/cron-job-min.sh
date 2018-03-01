@@ -7,6 +7,7 @@ if [ -x "$(command -v git)" ]; then
     git pull
     cd /home/kd-proxy
     git pull
+    npm install
 fi
 
 if [ -x "$(command -v ipsec)" ]; then

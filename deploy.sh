@@ -18,7 +18,6 @@ function deploy_vpn(){
 }
 
 function deploy_proxy(){
-  echo "deploy_proxy" >> /home/log
   cd /home/kd-proxy
   git pull
   npm install
