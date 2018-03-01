@@ -16,3 +16,5 @@ if [ -x "$(command -v ipsec)" ]; then
     ipsec restart
   fi
 fi
+
+date "+%Y-%m-%d %H:%M:%S"
