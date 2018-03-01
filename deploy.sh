@@ -3,7 +3,6 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin:~/.nvm/v
 export PATH
 
 function deploy_vpn(){
-  echo "deploy_vpn" >> /home/log
   if ! [ -x "$(command -v ipsec)" ]; then
     cd /home/kd-scripts
     git pull
