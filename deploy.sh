@@ -29,14 +29,13 @@ function deploy_proxy(){
   ps -fe | grep kd-proxy | grep -v grep
   if [ $? -ne 0 ] ; then
     cd /home/kd-proxy
-    pm2 start bootstrap
+    pm2 start bootstrap.json
     echo "start pm2" >> /home/deploy.log
   else
     echo "restart pm2" >> /home/deploy.log
     pm2 restart all
   fi
 }
-sleep 10
 echo "sleep 10 seconds" >> /home/deploy.log
 deploy_vpn
 deploy_proxy
