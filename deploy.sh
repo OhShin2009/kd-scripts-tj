@@ -23,17 +23,6 @@ function deploy_proxy(){
   cd /home/kd-proxy
   git pull
   npm install
-  ps -fe | grep kd-proxy | grep -v grep
-  if [ $? -ne 0 ] ; then
-    cd /home/kd-proxy
-    pm2 start bootstrap.json
-    pm2 startup
-    pm2 save
-  else
-
-    echo "restart pm2" >> /home/deploy.log
-    pm2 restart all
-  fi
 }
 
 deploy_vpn
