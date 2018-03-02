@@ -39,4 +39,4 @@ function deploy_proxy(){
 sleep 10
 echo "sleep 10 seconds" >> /home/deploy.log
 deploy_vpn
-deploy_proxy
+#deploy_proxy
