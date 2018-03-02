@@ -30,13 +30,11 @@ function deploy_proxy(){
     pm2 startup
     pm2 save
   else
+
     echo "restart pm2" >> /home/deploy.log
     pm2 restart all
   fi
 }
 
-function log(msg){
-    
-}
 deploy_vpn
 deploy_proxy
