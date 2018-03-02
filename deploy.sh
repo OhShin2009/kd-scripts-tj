@@ -5,14 +5,17 @@ export PATH
 function deploy_vpn(){
   echo "execute deploy_vpn" >> /home/deploy.log
   if ! [ -x "$(command -v ipsec)" ]; then
+    echo "1"
     cd /home/kd-scripts
     git pull
     bash /home/kd-scripts/create_ikev2_vpn.sh
   else
     ps -fe | grep ipsec | grep -v grep
     if [ $? -ne 0 ] ; then
+      echo "2"
       ipsec start
     else
+      echo "3"
       ipsec restart
     fi
   fi
