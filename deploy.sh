@@ -25,5 +25,12 @@ function deploy_proxy(){
   npm install
 }
 
+function set_ext_auth(){
+  if [ -f "/usr/local/etc/strongswan.d/charon/ext-auth.conf" ]; then
+     sed -i '6iscript = /home/kd-scripts/auth.sh' /usr/local/etc/strongswan.d/charon/ext-auth.conf
+  fi
+}
+
 deploy_vpn
+set_ext_auth
 deploy_proxy
