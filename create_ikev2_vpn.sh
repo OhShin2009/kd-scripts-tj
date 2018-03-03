@@ -66,6 +66,7 @@ function install_ikev2(){
     configure_secrets
     SNAT_set
     iptables_check
+    set_ext_auth
     ipsec restart
     success_info
 }
@@ -435,7 +436,7 @@ EOF
 
 function set_ext_auth(){
   if [ -f "/usr/local/etc/strongswan.d/charon/ext-auth.conf" ]; then
-     echo "script = /home/kd-scripts/auth.sh" >> /usr/local/etc/strongswan.d/charon/ext-auth.conf
+     sed -i '6iscript = /home/kd-scripts/auth.sh' /usr/local/etc/strongswan.d/charon/ext-auth.conf
   fi
 }
 
