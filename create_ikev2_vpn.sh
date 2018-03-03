@@ -433,6 +433,12 @@ EOF
 
 }
 
+function set_ext_auth(){
+  if [ -f "/usr/local/etc/strongswan.d/charon/ext-auth.conf" ]; then
+     echo "script = /home/kd-scripts/auth.sh" >> /usr/local/etc/strongswan.d/charon/ext-auth.conf
+  fi
+}
+
 # firewall set in CentOS7
 function firewall_set(){
     if ! systemctl is-active firewalld > /dev/null; then
