@@ -1,5 +1,5 @@
 #! /bin/bash
-PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin:~/.nvm/versions/node/v8.9.4/bin;
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin;
 export PATH
 
 function deploy_vpn(){
@@ -26,7 +26,7 @@ function deploy_proxy(){
 }
 
 function set_default_config(){
-  cp /home/kd-scripts/config/ext-auth.conf /usr/local/etc/strongswan.d/charon/ext-auth.conf
+  cp /home/kd-scripts/config/strongswan/ext-auth.conf /usr/local/etc/strongswan.d/charon/ext-auth.conf
   ipsec restart
 }
 
