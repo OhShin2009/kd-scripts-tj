@@ -2,6 +2,10 @@
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin;
 export PATH
 
+if [ ! -d "/home/log" ]; then
+  mkdir /home/log
+fi
+
 function check_netfilter(){
   if ! [ -x "$(command -v netfilter-persistent)" ]; then
     apt update
@@ -52,9 +56,7 @@ function check_scripts(){
 
 
 function add_cron(){
-  if [ ! -d "/home/log" ]; then
-    mkdir /home/log
-  fi
+
   (
     echo "* * * * * cd /home/kd-scripts/cron && ./cron-job-min.sh >> /home/log/min.log"
     echo "0 * * * * cd /home/kd-scripts/cron && ./cron-job-hour.sh >> /home/log/hour.log"
@@ -70,8 +72,8 @@ function init(){
   check_redis
   check_proxy
   check_scripts
-  add_cron
 }
 
 init
 bash /home/kd-scripts/deploy.sh
+add_cron
