@@ -38,9 +38,9 @@ function add_cron(){
     crontab -l
     result=$(echo "$?" | grep "no crontab")
     if [[ "$result" != "" ]]; then
-      echo "empty"
+      echo "already set"
       else
-      echo "alread set"
+      echo "empty"
     fi
 }
 
