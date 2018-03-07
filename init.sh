@@ -2,6 +2,11 @@
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin;
 export PATH
 
+if ! [ -x "$(command -v netfilter-persistent)" ]; then
+  apt update
+  DEBIAN_FRONTEND=noninteractive apt install iptables-persistent -y
+fi
+
 if ! [ -x "$(command -v node)" ]; then
     curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
     apt install -y nodejs
@@ -29,4 +34,5 @@ if [ ! -d "/home/kd-scripts" ]; then
   git clone https://github.com/Mooc1988/kd-scripts.git
 fi
 
-bash /home/kd-scripts/deploy.sh
+
+#bash /home/kd-scripts/deploy.sh
