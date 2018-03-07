@@ -34,5 +34,16 @@ if [ ! -d "/home/kd-scripts" ]; then
   git clone https://github.com/Mooc1988/kd-scripts.git
 fi
 
+function add_cron(){
+    crontab -l
+    result = echo "$?" | grep "no crontab"
+    if [[ "$result" != "" ]]; then
+      echo "set cron"
+      else
+      echo "empty"
+    fi
+}
 
+
+add_cron
 #bash /home/kd-scripts/deploy.sh
