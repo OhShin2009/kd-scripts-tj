@@ -52,14 +52,14 @@ function check_scripts(){
 
 
 function add_cron(){
-  if [ ! -d "/home/kd-scripts" ]; then
-    mkdir /home/cron-log
+  if [ ! -d "/home/log" ]; then
+    mkdir /home/log
   fi
   (
-    echo "* * * * * cd /home/kd-scripts/cron && ./cron-job-min.sh >> /home/cron-log/min.log"
-    echo "0 * * * * cd /home/kd-scripts/cron && ./cron-job-hour.sh >> /home/cron-log/hour.log"
-    echo "0 0 * * * cd /home/kd-scripts/cron && ./cron-job-day.sh >> /home/cron-log/day.log"
-    echo "0 0 * * 0 cd /home/kd-scripts/cron && ./cron-job-week.sh >> /home/cron-log/week.log"
+    echo "* * * * * cd /home/kd-scripts/cron && ./cron-job-min.sh >> /home/log/min.log"
+    echo "0 * * * * cd /home/kd-scripts/cron && ./cron-job-hour.sh >> /home/log/hour.log"
+    echo "0 0 * * * cd /home/kd-scripts/cron && ./cron-job-day.sh >> /home/log/day.log"
+    echo "0 0 * * 0 cd /home/kd-scripts/cron && ./cron-job-week.sh >> /home/log/week.log"
   ) | crontab -u root -
 }
 

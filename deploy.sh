@@ -3,7 +3,7 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin;
 export PATH
 
 function deploy_vpn(){
-  echo "execute deploy_vpn" >> /home/deploy.log
+  echo "execute deploy_vpn" >> /home/log/deploy.log
   if ! [ -x "$(command -v ipsec)" ]; then
     cd /home/kd-scripts
     git pull
@@ -19,7 +19,7 @@ function deploy_vpn(){
 }
 
 function deploy_proxy(){
-  echo "execute deploy_proxy" >> /home/deploy.log
+  echo "execute deploy_proxy" >> /home/log/deploy.log
   cd /home/kd-proxy
   git pull
   npm install
