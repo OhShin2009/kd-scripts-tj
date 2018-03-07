@@ -37,12 +37,12 @@ fi
 function add_cron(){
     result=$(crontab -l | grep "no crontab")
     if [[ "$result" != "" ]]; then
-      crontab -u root - <<EOF
-        * * * * * cd /home/kd-scripts/cron && ./cron-job-min.sh >> /home/cron-log/min.log
-        0 * * * * cd /home/kd-scripts/cron && ./cron-job-hour.sh >> /home/cron-log/hour.log
-        0 0 * * * cd /home/kd-scripts/cron && ./cron-job-day.sh >> /home/cron-log/day.log
-        0 0 * * 0 cd /home/kd-scripts/cron && ./cron-job-week.sh >> /home/cron-log/week.log
-      EOF
+      (
+      echo "* * * * * cd /home/kd-scripts/cron && ./cron-job-min.sh >> /home/cron-log/min.log"
+      echo "0 * * * * cd /home/kd-scripts/cron && ./cron-job-hour.sh >> /home/cron-log/hour.log"
+      echo "0 0 * * * cd /home/kd-scripts/cron && ./cron-job-day.sh >> /home/cron-log/day.log"
+      echo "0 0 * * 0 cd /home/kd-scripts/cron && ./cron-job-week.sh >> /home/cron-log/week.log"
+      ) | crontab -u root -
       else
       echo "already"
     fi
