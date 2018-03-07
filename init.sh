@@ -35,8 +35,7 @@ if [ ! -d "/home/kd-scripts" ]; then
 fi
 
 function add_cron(){
-    crontab -l
-    result=$(echo "$?" | grep "no crontab")
+    result=$(crontab -l | grep "no crontab")
     if [[ "$result" != "" ]]; then
       echo "already set"
       else
