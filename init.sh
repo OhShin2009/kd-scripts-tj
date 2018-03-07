@@ -52,6 +52,9 @@ function check_scripts(){
 
 
 function add_cron(){
+  if [ ! -d "/home/kd-scripts" ]; then
+    mkdir /home/cron-log
+  fi
   (
     echo "* * * * * cd /home/kd-scripts/cron && ./cron-job-min.sh >> /home/cron-log/min.log"
     echo "0 * * * * cd /home/kd-scripts/cron && ./cron-job-hour.sh >> /home/cron-log/hour.log"
