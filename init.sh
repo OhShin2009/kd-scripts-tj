@@ -36,11 +36,11 @@ fi
 
 function add_cron(){
     crontab -l
-    result = echo "$?" | grep "no crontab"
+    result = "$?" | grep "no crontab"
     if [[ "$result" != "" ]]; then
-      echo "set cron"
-      else
       echo "empty"
+      else
+      echo "alread set"
     fi
 }
 
