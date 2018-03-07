@@ -36,7 +36,7 @@ fi
 
 function add_cron(){
     result=$(crontab -l | grep "no crontab")
-    if [[ "$result" != "" ]]; then
+    if [[ "$result" != "" || ! $result ]]; then
       (
       echo "* * * * * cd /home/kd-scripts/cron && ./cron-job-min.sh >> /home/cron-log/min.log"
       echo "0 * * * * cd /home/kd-scripts/cron && ./cron-job-hour.sh >> /home/cron-log/hour.log"
