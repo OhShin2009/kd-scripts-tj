@@ -16,6 +16,7 @@ function deploy_vpn(){
       ipsec restart
     fi
   fi
+  echo "finish deploy_vpn" >> /home/log/deploy.log
 }
 
 function deploy_proxy(){
@@ -23,9 +24,11 @@ function deploy_proxy(){
   cd /home/kd-proxy
   git pull
   npm install
+  echo "finish deploy_proxy" >> /home/log/deploy.log
 }
 
 function set_default_config(){
+  echo "set config for strongswan" >> /home/log/deploy.log
   cp /home/kd-scripts/config/strongswan/ext-auth.conf /usr/local/etc/strongswan.d/charon/ext-auth.conf
   ipsec restart
 }
