@@ -71,4 +71,4 @@ function init(){
 }
 
 init
-#bash /home/kd-scripts/deploy.sh
+bash /home/kd-scripts/deploy.sh
