@@ -201,14 +201,14 @@ function download_files(){
 # configure and install strongswan
 function setup_strongswan(){
     if [ "$os" = "1" ]; then
-        ./configure  --enable-eap-identity --enable-eap-md5  --enable-ext-auth \
+        ./configure  --enable-eap-identity --enable-eap-md5 \
 --enable-eap-mschapv2 --enable-eap-tls --enable-eap-ttls --enable-eap-peap  \
 --enable-eap-tnc --enable-eap-dynamic --enable-eap-radius --enable-xauth-eap  \
 --enable-xauth-pam  --enable-dhcp  --enable-openssl  --enable-addrblock --enable-unity  \
 --enable-certexpire --enable-radattr --enable-swanctl --enable-openssl --disable-gmp  
 
     else
-        ./configure  --enable-eap-identity --enable-eap-md5 --enable-ext-auth \
+        ./configure  --enable-eap-identity --enable-eap-md5 \
 --enable-eap-mschapv2 --enable-eap-tls --enable-eap-ttls --enable-eap-peap  \
 --enable-eap-tnc --enable-eap-dynamic --enable-eap-radius --enable-xauth-eap  \
 --enable-xauth-pam  --enable-dhcp  --enable-openssl  --enable-addrblock --enable-unity  \
