@@ -396,15 +396,15 @@ EOF
 
 # configure the ipsec.secrets
 function configure_secrets(){
-    if ! [ -f "/usr/local/etc/ipsec.secrets.default" ]; then
-        cat > /usr/local/etc/ipsec.secrets.default<<-EOF
-          : RSA server.pem
-          : PSK "1q2w3e4r"
-          : XAUTH "1q2w3e4r"
-          xingtao %any : EAP "123456"
-        EOF
-    fi
-    cp /usr/local/etc/ipsec.secrets.default /usr/local/etc/ipsec.secrets
+      if [ ! -f "/usr/local/etc/ipsec.secrets.default" ]; then
+    cat > /usr/local/etc/ipsec.secrets.default<<-EOF
+: RSA server.pem
+: PSK "1q2w3e4r"
+: XAUTH "1q2w3e4r"
+xingtao %any : EAP "123456"
+EOF
+fi
+cp /usr/local/etc/ipsec.secrets.default /usr/local/etc/ipsec.secrets
 }
 
 function SNAT_set(){
