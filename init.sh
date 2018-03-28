@@ -24,14 +24,6 @@ function check_node(){
 }
 
 
-function check_git(){
-  if ! [ -x "$(command -v git)" ]; then
-    apt update
-    apt install -y git
-  fi
-}
-
-
 function check_redis(){
   if ! [ -x "$(command -v redis-server)" ]; then
     apt update
@@ -47,12 +39,6 @@ function check_proxy(){
   fi
 }
 
-function check_scripts(){
-  if [ ! -d "/home/kd-scripts" ]; then
-    cd /home
-    git clone https://github.com/Mooc1988/kd-scripts.git
-  fi
-}
 
 
 function add_cron(){
@@ -68,10 +54,8 @@ function add_cron(){
 function init(){
   check_netfilter
   check_node
-  check_git
   check_redis
   check_proxy
-  check_scripts
 }
 
 init

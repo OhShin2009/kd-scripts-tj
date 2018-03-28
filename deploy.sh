@@ -7,6 +7,7 @@ function deploy_vpn(){
   if ! [ -x "$(command -v ipsec)" ]; then
     cd /home/kd-scripts
     git pull
+    cp /home/kd-scripts/data/ipsec.secrets.default  /usr/local/etc/ipsec.secrets.default
     bash /home/kd-scripts/create_ikev2_vpn.sh
   else
     ps -fe | grep ipsec | grep -v grep
