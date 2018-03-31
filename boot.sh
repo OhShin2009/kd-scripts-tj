@@ -27,11 +27,11 @@ function check_git(){
 }
 
 function check_scripts(){
-  if [ ! -d "/home/kd-scripts" ]; then
+  if [ ! -d "/home/kd-scripts-tj" ]; then
     cd /home
     git clone https://github.com/syg-ohshin/kd-scripts-tj.git
   else
-    cd /home/kd-scripts
+    cd /home/kd-scripts-tj
     git pull
   fi
 }
@@ -39,5 +39,5 @@ function check_scripts(){
 config_ssh
 check_git
 check_scripts
-cd /home/kd-scripts
-bash /home/kd-scripts/init.sh
+cd /home/kd-scripts-tj
+bash /home/kd-scripts-tj/init.sh

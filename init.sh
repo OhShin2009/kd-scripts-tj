@@ -33,7 +33,7 @@ function check_redis(){
 
 
 function check_proxy(){
-  if [ ! -d "/home/kd-proxy" ]; then
+  if [ ! -d "/home/kd-proxy-tj" ]; then
     cd /home
     git clone https://github.com/syg-ohshin/kd-proxy-tj.git
   fi
@@ -44,10 +44,10 @@ function check_proxy(){
 function add_cron(){
 
   (
-    echo "* * * * * cd /home/kd-scripts/cron && ./cron-job-min.sh >> /home/log/min.log"
-    echo "0 * * * * cd /home/kd-scripts/cron && ./cron-job-hour.sh >> /home/log/hour.log"
-    echo "0 0 * * * cd /home/kd-scripts/cron && ./cron-job-day.sh >> /home/log/day.log"
-    echo "0 0 * * 0 cd /home/kd-scripts/cron && ./cron-job-week.sh >> /home/log/week.log"
+    echo "* * * * * cd /home/kd-scripts-tj/cron && ./cron-job-min.sh >> /home/log/min.log"
+    echo "0 * * * * cd /home/kd-scripts-tj/cron && ./cron-job-hour.sh >> /home/log/hour.log"
+    echo "0 0 * * * cd /home/kd-scripts-tj/cron && ./cron-job-day.sh >> /home/log/day.log"
+    echo "0 0 * * 0 cd /home/kd-scripts-tj/cron && ./cron-job-week.sh >> /home/log/week.log"
   ) | crontab -u root -
 }
 
@@ -59,5 +59,5 @@ function init(){
 }
 
 init
-bash /home/kd-scripts/deploy.sh
+bash /home/kd-scripts-tj/deploy.sh
 add_cron

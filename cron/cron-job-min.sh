@@ -8,9 +8,9 @@ echo '========================'
 
 function update_code(){
   if [ -x "$(command -v git)" ]; then
-      cd /home/kd-scripts
+      cd /home/kd-scripts-tj
       git pull
-      cd /home/kd-proxy
+      cd /home/kd-proxy-tj
       git pull
       npm install
   fi
@@ -27,9 +27,9 @@ function check_ipsec(){
 
 
 function check_proxy(){
-  ps -fe | grep kd-proxy | grep -v grep
+  ps -fe | grep kd-proxy-tj | grep -v grep
   if [ $? -ne 0 ] ; then
-    cd /home/kd-proxy
+    cd /home/kd-proxy-tj
     pm2 start bootstrap.json
   fi
 }
