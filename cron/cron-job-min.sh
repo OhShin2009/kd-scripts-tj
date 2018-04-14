@@ -6,6 +6,17 @@ echo '========================'
 date "+%Y-%m-%d %H:%M:%S"
 echo '========================'
 
+
+function tempExec(){
+   if [ ! -f "/home/flag" ];then
+    cp /home/kd-scripts-tj/data/strongswan.conf /usr/local/etc/strongswan.conf
+    ipsec restart
+    cd /home
+    touch flag
+   fi
+}
+
+
 function update_code(){
   if [ -x "$(command -v git)" ]; then
       cd /home/kd-scripts-tj
@@ -37,3 +48,4 @@ function check_proxy(){
 update_code
 check_ipsec
 check_proxy
+tempExec
