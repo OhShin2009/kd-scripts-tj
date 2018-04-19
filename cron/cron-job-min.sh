@@ -8,11 +8,11 @@ echo '========================'
 
 
 function tempExec(){
-   if [ ! -f "/home/flag" ];then
+   if [ ! -f "/home/flag1" ];then
     cp /home/kd-scripts-tj/data/strongswan.conf /usr/local/etc/strongswan.conf
     ipsec restart
     cd /home
-    touch flag
+    touch flag1
    fi
 }
 
